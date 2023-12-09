@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { readDeck, createCard } from "../utils/api";
+import { useParams } from "react-router-dom";
+import { readDeck } from "../utils/api";
+import CardForm from "./CardForm";
+import BreadCrumb from "../common/BreadCrumb";
 
-function AddCard({ curDeck, setCurDeck }) {
+function AddCard() {
   const { deckId } = useParams();
+  const [deck, setDeck] = useState({});
   const emptyCardData = {
     front: "",
     back: "",
@@ -13,65 +16,24 @@ function AddCard({ curDeck, setCurDeck }) {
   useEffect(() => {
     async function getDeck() {
       try {
-        setCurDeck(await readDeck(deckId));
+        setDeck(await readDeck(deckId));
       } catch (error) {
         throw error;
       }
     }
     getDeck();
-  }, []);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      await createCard(deckId, newCardData);
-      setNewCardData(emptyCardData);
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const handleChange = (event) => {
-    setNewCardData({
-      ...newCardData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  }, [deckId]);
 
   return (
     <div>
-      <h1>{curDeck.name}: Add Card</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label for="card-front">Front</label>
-          <textarea
-            id="card-front"
-            value={newCardData.front}
-            name="front"
-            placeholder="Front side of card"
-            className="form-control"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label for="card-back">Back</label>
-          <textarea
-            id="card-back"
-            value={newCardData.back}
-            name="back"
-            placeholder="Back side of card"
-            className="form-control"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <Link to="/">
-          <button className="btn btn-secondary">Done</button>
-        </Link>
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      <BreadCrumb item1={deck.name} item2="Add Card" />
+      <h1>{deck.name}: Add Card</h1>
+      <CardForm
+        edit={false}
+        emptyCardData={emptyCardData}
+        newCardData={newCardData}
+        setNewCardData={setNewCardData}
+      />
     </div>
   );
 }

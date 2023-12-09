@@ -20,7 +20,7 @@ function DeckList() {
   return (
     <div>
       <Link to="/decks/new">
-        <button className="btn-secondary">Create</button>
+        <button className="btn btn-secondary mb-2">Create</button>
       </Link>
 
       {decks.map((deck) => (
