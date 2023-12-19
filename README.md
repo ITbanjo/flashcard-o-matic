@@ -10,10 +10,10 @@ The Homepage lists all existing decks.
 
 Homepage buttons:
 
-Create: Takes you to the Create Deck screen
-View: Takes you to the Deck screen
-Study: Takes you to the Study screen
-Delete: Deletes specific deck. (A modal confirmation message will pop-up)
+- Create: Takes you to the Create Deck screen
+- View: Takes you to the Deck screen
+- Study: Takes you to the Study screen
+- Delete: Deletes specific deck. (A modal confirmation message will pop-up)
 
 ![home page](screenshots/home.png)
 
