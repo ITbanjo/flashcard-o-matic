@@ -10,9 +10,11 @@ function BreadCrumb({ item1, item2 }) {
             <Link to="/">Home</Link>
           </li>
           <li class="breadcrumb-item text-primary">{item1}</li>
-          <li class="breadcrumb-item active" aria-current="page">
-            {item2}
-          </li>
+          {item2 && (
+            <li class="breadcrumb-item active" aria-current="page">
+              {item2}
+            </li>
+          )}
         </ol>
       </nav>
     );

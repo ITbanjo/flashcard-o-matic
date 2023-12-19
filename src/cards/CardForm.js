@@ -69,7 +69,7 @@ function CardForm({
       {edit ? (
         <div>
           <Link to={`/decks/${deckId}`}>
-            <button className="btn btn-secondary">Cancel</button>
+            <button className="btn btn-secondary mr-1">Cancel</button>
           </Link>
           <button type="submit" className="btn btn-primary">
             Submit
@@ -78,7 +78,7 @@ function CardForm({
       ) : (
         <div>
           <Link to={`/decks/${deckId}`}>
-            <button className="btn btn-secondary">Done</button>
+            <button className="btn btn-secondary mr-1">Done</button>
           </Link>
           <button type="submit" className="btn btn-primary">
             Save
