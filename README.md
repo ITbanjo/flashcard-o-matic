@@ -1,6 +1,6 @@
 # Flashcard-O-Matic App
 
-Flashcard-O-Matic is an app that enables users to create, edit, and delete decks of two-sided flashcards. Within decks, individual flashcards can be added, removed, and edited. Finally, users may study the flashcards by using the "study" screen.
+Flashcard-O-Matic is an app created with ReactJS, that enables users to create, edit, and delete decks of two-sided flashcards. Within decks, individual flashcards can be added, removed, and edited. Finally, users may study the flashcards by using the "study" screen.
 
 ## Screenshots
 
@@ -52,3 +52,21 @@ Add the card's "question" to the front-side, and add the "answer" to the back-si
 alter front and/or back to edit an existing card.
 
 ![edit card](screenshots/edit-card.png)
+
+### Install
+
+```sh
+npm install
+```
+
+### Usage
+
+```sh
+npm start
+```
+
+### Run tests
+
+```sh
+npm test
+```
