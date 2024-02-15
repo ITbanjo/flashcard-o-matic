@@ -53,19 +53,19 @@ alter front and/or back to edit an existing card.
 
 ![edit card](screenshots/edit-card.png)
 
-### Install
+## Install
 
 ```sh
 npm install
 ```
 
-### Usage
+## Usage
 
 ```sh
 npm start
 ```
 
-### Run tests
+## Run tests
 
 ```sh
 npm test
